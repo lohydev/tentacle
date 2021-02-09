@@ -28,3 +28,6 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
 RUN apt-get update
 RUN apt-get install azure-cli=2.7.0-1~buster -y
 RUN az version
+
+RUN apt-get install python3
+RUN python3 --version
