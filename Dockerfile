@@ -1,4 +1,4 @@
-FROM octopusdeploy/tentacle:6.0.135
+FROM octopusdeploy/tentacle:6.0.390
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -29,5 +29,7 @@ RUN apt-get update
 RUN apt-get install azure-cli=2.7.0-1~buster -y
 RUN az version
 
-RUN apt-get install python3
+RUN apt-get install python3 -y
 RUN python3 --version
+RUN apt-get install python3-pip -y
+RUN python3 -m pip --version
