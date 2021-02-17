@@ -33,3 +33,9 @@ RUN apt-get install python3 -y
 RUN python3 --version
 RUN apt-get install python3-pip -y
 RUN python3 -m pip --version
+
+RUN curl https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -o packages-microsoft-prod.deb
+RUN dpkg -i packages-microsoft-prod.deb
+RUN apt-get update
+RUN apt-get install powershell -y
+RUN pwsh -v
